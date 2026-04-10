@@ -33,13 +33,13 @@ const main = async () => {
           {
             courseId: course.id,
             title: "Unit 1",
-            description: `Learn the basics of ${course.title}`,
+            description: `Learn the nouns of ${course.title}`,
             order: 1,
           },
           {
             courseId: course.id,
             title: "Unit 2",
-            description: `Learn intermediate ${course.title}`,
+            description: `Learn the nouns of ${course.title}`,
             order: 2,
           },
         ])

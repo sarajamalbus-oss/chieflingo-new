@@ -33,7 +33,7 @@ const [audio, _, controls] = useAudio({ src: audioSrc ?? ""});
 
 const handelClick = useCallback(() => {
     if(disabled) return;
-    if(audioSrc) controls.play();  // ← شغّلي الصوت بس لو فيه audioSrc
+    if(audioSrc) controls.play(); 
     onClick();
 }, [disabled, onClick, controls, audioSrc]);
 
@@ -80,7 +80,7 @@ const handelClick = useCallback(() => {
       >{text}
       </p>
       <div className={cn(
-        "lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] border-2 flex items-center justify-center rounded-lg text-neutral-400 lg:text-[15px] text-xs font-semibold",selected && "text-sky-500",
+        "lg:w-[30px] lg:h-[30px] w-[20px] h-[20px] border-2 flex items-center justify-center rounded-lg text-neutral-400 lg:text-[15px] Stext-xs font-semibold",selected && "text-sky-500",
         selected && status ==="correct" && "border-green-500 text-green-500",
         selected && status ==="wrong" && "border-rose-500 text-rose-500",
       )}>

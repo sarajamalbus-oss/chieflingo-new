@@ -3,17 +3,16 @@ import { redirect } from "next/navigation";
 import { Quiz } from "../quiz";
 
 type Props = {
-    params: {
-        lessonId:number;
-    };
+    params: Promise<{
+        lessonId: number;
+    }>;
 };
 
-const LessonIdPage = async({
-    params,
+const LessonIdPage = async({ params }: Props) => {
 
-}: Props) => {
+    const { lessonId } = await params;
 
-    const lessonData = getLesson(params.lessonId);
+    const lessonData = getLesson(lessonId);
     const userProgressData = getUserProgress();
     const userSubscriptionData = getUserSubscription();
     
@@ -31,7 +30,7 @@ const LessonIdPage = async({
         redirect("/learn");
     }
 
-    const initialPrecentage = lesson.challenges.filter((challenge) => challenge.completed).length/ lesson.challenges.length * 100;
+    const initialPrecentage = lesson.challenges.filter((challenge) => challenge.completed).length / lesson.challenges.length * 100;
 
     return (
         <Quiz 

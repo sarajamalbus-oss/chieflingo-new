@@ -55,6 +55,12 @@ if (!courseProgress) {
 
 const isPro = !!userSubscripion?.isActive;
 
+// ضيفي هنا
+console.log("courseProgress:", courseProgress);
+console.log("activeLesson:", courseProgress.activeLesson);
+
+
+
   return (
     <div className="flex flex-row-reverse gap-[48px] px-6">
       <StickyWrapper>

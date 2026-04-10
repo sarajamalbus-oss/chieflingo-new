@@ -66,7 +66,7 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     revalidatePath("/lesson");
     revalidatePath("/quests");
     revalidatePath("/leaderboard");
-    revalidatePath('/lesson/${lessonId}');
+    revalidatePath(`/lesson/${lessonId}`);
     return;
     }
 
@@ -84,7 +84,9 @@ export const upsertChallengeProgress = async (challengeId: number) => {
     revalidatePath("/lesson");
     revalidatePath("/quests");
     revalidatePath("/leaderboard");
-    revalidatePath('/lesson/${lessonId}');
+    revalidatePath(`/lesson/${lessonId}`);
+
+    
     return;
 }
 

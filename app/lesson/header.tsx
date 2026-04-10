@@ -1,3 +1,4 @@
+"use client";
 import { Progress } from "@/components/ui/progress";
 import { useExitModal } from "@/components/ui/store/use-exit-modal";
 import { InfinityIcon, X } from "lucide-react";

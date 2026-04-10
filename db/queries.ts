@@ -150,6 +150,14 @@ const fristUncompletedLesson = unitInActiveCourse
     });
 });
 
+console.log("lessons:", JSON.stringify(unitInActiveCourse.flatMap(u => u.lessons).map(l => ({
+    id: l.id,
+    challenges: l.challenges.map(c => ({
+        id: c.id,
+        progress: c.challengeProgress
+    }))
+})), null, 2));
+
 return {
     activeLesson: fristUncompletedLesson,
     activeLessonId: fristUncompletedLesson?.id,

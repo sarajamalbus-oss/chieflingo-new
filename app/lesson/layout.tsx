@@ -1,3 +1,6 @@
+import { ExitModal } from "@/components/ui/store/modals/exit-modal";
+import { PracticeModal } from "@/components/ui/store/modals/practice-modal";
+
 type Props = {
     children: React.ReactNode
 };
@@ -5,12 +8,13 @@ type Props = {
 const LessonLayout = ({ children }: Props) => {
     return ( 
         <div className="flex flex-col h-full">
-             <div className="flex flex-col h-full w-fulls">
+            <ExitModal />
+            <PracticeModal />
+            <div className="flex flex-col h-full w-full">
               {children}
-             </div>
+            </div>
         </div>
     );
-
 }
 
 export default LessonLayout;
