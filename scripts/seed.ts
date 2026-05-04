@@ -38,14 +38,14 @@ const main = async () => {
     // NOUNS - lesson 1
     // =====================
     await db.insert(schema.challenges).values([
-      { id: 1,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "رجل"؟',   order: 1 },
-      { id: 2,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "امرأة"؟', order: 2 },
-      { id: 3,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "ولد"؟',   order: 3 },
-      { id: 4,  lessonId: 1, type: "ASSIST", questions: "رجل",                    order: 4 },
-      { id: 5,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "كرة"؟',   order: 5 },
-      { id: 6,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "روبوت"؟', order: 6 },
-      { id: 7,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "بنت"؟',   order: 7 },
-      { id: 8,  lessonId: 1, type: "ASSIST", questions: "كرة",                    order: 8 },
+      { id: 1,  lessonId: 1, type: "SELECT", questions: 'Which of these is man?"أي من هذه هي "رجل"؟',   order: 1 },
+      { id: 2,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "امرأة"?"Which of these choices is woman?"', order: 2 },
+      { id: 3,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "ولد"؟  Which of these is"boy"?',   order: 3 },
+      { id: 4,  lessonId: 1, type: "ASSIST", questions: '"رجل " Which of these is "man" ',                    order: 4 },
+      { id: 5,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "كرة"؟  " Which one is "ball"?',   order: 5 },
+      { id: 6,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "روبوت"؟  " Which one is "robot"?', order: 6 },
+      { id: 7,  lessonId: 1, type: "SELECT", questions: 'أي من هذه هي "بنت"؟  " Which one is "girl"?',   order: 7 },
+      { id: 8,  lessonId: 1, type: "ASSIST", questions: '"كرة" " Which one is "ball"?',                    order: 8 },
     ]);
 
     await db.insert(schema.challengeOptions).values([

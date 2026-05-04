@@ -25,10 +25,10 @@ export const Items = ({
        if (pending || hearts === 5 || points < POINTS_TO_REFILL) {
            return;
        }
-      /* startTransition(() => {
+       startTransition(() => {
            refillHearts()
                .catch(() => toast.error("Something went wrong"));
-       });*/
+       });
    };
 
   const onUpgrade = () => {
