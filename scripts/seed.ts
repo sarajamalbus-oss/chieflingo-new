@@ -98,23 +98,23 @@ const main = async () => {
 // VERBS - lesson 2
 // =====================
 await db.insert(schema.challenges).values([
-  { id: 9,  lessonId: 2, type: "SELECT", questions: 'أي من هذه هي "يشرب"؟', order: 1 },
-  { id: 10, lessonId: 2, type: "SELECT", questions: 'أي من هذه هي "يأكل"؟', order: 2 },
-  { id: 11, lessonId: 2, type: "ASSIST", questions: "يشرب",                  order: 3 },
+  { id: 9,  lessonId: 2, type: "SELECT", imageSrc: "/run.png",questions: 'أي من هذه هي "يجري"؟', order: 1 },
+  { id: 10, lessonId: 2, type: "SELECT", imageSrc: "/eat.jpeg", questions: 'أي من هذه هي "يأكل"؟', order: 2 },
+  { id: 11, lessonId: 2, type: "ASSIST", imageSrc: "/drink.png", questions: "يشرب",                  order: 3 },
 ]);
 
 await db.insert(schema.challengeOptions).values([
-  { id: 25, challengeId: 9,  correct: true,  text: "run",  audioSrc: "/run_a.mp3" },
-  { id: 26, challengeId: 9,  correct: false, text: "eat",  audioSrc: "/eat_a.mp3" },
-  { id: 27, challengeId: 9,  correct: false, text: "sleep", audioSrc: "/sleep_a.mp3" },
+  { id: 25, challengeId: 9,  correct: true, imageSrc: "/run.png", text: "run",  audioSrc: "/run_a.mp3" },
+  { id: 26, challengeId: 9,  correct: false, imageSrc: "/eat.jpeg", text: "eat",  audioSrc: "/eat_a.mp3" },
+  { id: 27, challengeId: 9,  correct: false, imageSrc: "/sleep.png",text: "sleep", audioSrc: "/sleep_a.mp3" },
 
-  { id: 28, challengeId: 10, correct: true,  text: "eat",  audioSrc: "/eat_a.mp3" },
-  { id: 29, challengeId: 10, correct: false, text: "run",  audioSrc: "/run_a.mp3" },
-  { id: 30, challengeId: 10, correct: false, text: "sleep", audioSrc: "/sleep_a.mp3" },
+  { id: 28, challengeId: 10, correct: true, imageSrc: "/eat.jpeg", text: "eat",  audioSrc: "/eat_a.mp3" },
+  { id: 29, challengeId: 10, correct: false, imageSrc: "/run.png", text: "run",  audioSrc: "/run_a.mp3" },
+  { id: 30, challengeId: 10, correct: false, imageSrc: "/sleep.png", text: "sleep", audioSrc: "/sleep_a.mp3" },
 
-  { id: 31, challengeId: 11, correct: true,  text: "run",  audioSrc: "/run_a.mp3" },
-  { id: 32, challengeId: 11, correct: false, text: "eat",  audioSrc: "/eat_a.mp3" },
-  { id: 33, challengeId: 11, correct: false, text: "sleep", audioSrc: "/sleep_a.mp3" },
+  { id: 31, challengeId: 11, correct: true, imageSrc: "/drink.png", text: "drink",  audioSrc: "/drink_a.mp3" },
+  { id: 32, challengeId: 11, correct: false, imageSrc: "/eat.jpeg", text: "eat",  audioSrc: "/eat_a.mp3" },
+  { id: 33, challengeId: 11, correct: false, imageSrc: "/sleep.png",text: "sleep", audioSrc: "/sleep_a.mp3" },
 ]);
 
 

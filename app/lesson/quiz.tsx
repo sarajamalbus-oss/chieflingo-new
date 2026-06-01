@@ -6,7 +6,7 @@ import { Challenge } from "./challenge";
 import Image from "next/image";
 import Confetti from "react-confetti";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import { Header } from "./header";
 import { QuestionBubble } from "./question-bubble";
 import { Footer } from "./footer";
@@ -51,7 +51,7 @@ export const Quiz = ({
     const { width, height } = useWindowSize();
     const router = useRouter();
 
-    const [finishAudio] = useAudio({ src: "/finish_a.mp3", autoPlay: true });
+    const [finishAudio, _f, finishControls] = useAudio({ src: "/finish_a.mp3" });
     const [correctAudio, _c, correctControls] = useAudio({ src: "/correct_a.mp3" });
     const [incorrectAudio, _i, incorrectControls] = useAudio({ src: "/incorrect_a.mp3" });
 
@@ -72,6 +72,14 @@ export const Quiz = ({
 
     const challenge = challenges[activeIndex];
     const options = challenge?.challengeOptions ?? [];
+
+    const isFinished = !challenge;
+
+    useEffect(() => {
+        if (isFinished) {
+            finishControls.play();
+        }
+    }, [isFinished]);
 
     const onNext = () => {
         setActiveIndex((current) => current + 1);
@@ -140,7 +148,7 @@ export const Quiz = ({
         }
     };
 
-    if (!challenge) {
+    if (isFinished) {
         return (
             <>
                 {finishAudio}
